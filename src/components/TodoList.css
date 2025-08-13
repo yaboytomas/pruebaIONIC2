@@ -1,0 +1,143 @@
+.todo-content {
+  --background: #f8f9fa;
+}
+
+.todo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.app-title ion-icon {
+  font-size: 20px;
+}
+
+.todo-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.todo-stats ion-badge {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.filter-segment {
+  margin-bottom: 20px;
+  --background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-segment ion-segment-button {
+  --color: #6c757d;
+  --color-checked: #007bff;
+  --indicator-color: #007bff;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 14px;
+}
+
+.todo-list-container {
+  margin-top: 20px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 64px;
+  color: #dee2e6;
+  margin-bottom: 16px;
+}
+
+.empty-state ion-text {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 12px;
+  }
+  
+  .todo-stats {
+    gap: 8px;
+  }
+  
+  .todo-stats ion-badge {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+  
+  .app-title {
+    font-size: 16px;
+  }
+  
+  .app-title ion-icon {
+    font-size: 18px;
+  }
+}
+
+/* Animation for new todos */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Custom scrollbar */
+.todo-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.todo-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.todo-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 

@@ -1,0 +1,91 @@
+.user-profile-card {
+  margin: 16px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ion-color-primary);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ion-color-light);
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+}
+
+.avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ion-color-primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 50%;
+}
+
+.profile-info h3 {
+  margin: 0 0 8px 0;
+  color: var(--ion-color-dark);
+  font-weight: 600;
+}
+
+.status-badge {
+  font-size: 0.8em;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-item {
+  --background: var(--ion-color-light);
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin-bottom: 8px;
+}
+
+.profile-item ion-icon {
+  color: var(--ion-color-medium);
+}
+
+.profile-item h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ion-color-dark);
+}
+
+.profile-item p {
+  margin: 4px 0 0 0;
+  color: var(--ion-color-medium);
+}
+
+.logout-btn {
+  margin-top: 16px;
+  --border-radius: 8px;
+  height: 44px;
+  font-weight: 600;
+}

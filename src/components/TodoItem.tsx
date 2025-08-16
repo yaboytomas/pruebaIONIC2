@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  IonItem,
   IonLabel,
   IonButton,
   IonIcon,
@@ -10,8 +9,11 @@ import {
   IonCheckbox,
   IonCard,
   IonCardContent,
+  IonImg,
+  IonText,
+  IonBadge,
 } from '@ionic/react';
-import { trashOutline, createOutline, checkmarkOutline, closeOutline } from 'ionicons/icons';
+import { trashOutline, createOutline, checkmarkOutline, closeOutline, locationOutline, cameraOutline } from 'ionicons/icons';
 import { Todo } from '../types/Todo';
 import './TodoItem.css';
 
@@ -92,6 +94,49 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
             <IonLabel className={`todo-description ${todo.completed ? 'completed' : ''}`}>
               {todo.description}
             </IonLabel>
+            
+            {/* Attachment Indicators */}
+            {(todo.image || todo.location) && (
+              <div className="todo-attachments">
+                {todo.image && (
+                  <div className="attachment-indicator">
+                    <IonIcon icon={cameraOutline} />
+                    <span>Foto</span>
+                  </div>
+                )}
+                {todo.location && (
+                  <div className="attachment-indicator">
+                    <IonIcon icon={locationOutline} />
+                    <span>Ubicación</span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Image Display */}
+            {todo.image && (
+              <div className="todo-media">
+                <IonImg 
+                  src={`data:image/jpeg;base64,${todo.image}`} 
+                  alt="Task image"
+                  className="todo-image"
+                />
+              </div>
+            )}
+
+            {/* Location Display */}
+            {todo.location && (
+              <div className="todo-location">
+                <IonBadge color="secondary">
+                  <IonIcon icon={locationOutline} />
+                  <IonText>
+                    {todo.location.address || 
+                     `${todo.location.latitude.toFixed(4)}, ${todo.location.longitude.toFixed(4)}`}
+                  </IonText>
+                </IonBadge>
+              </div>
+            )}
+
             <div className="todo-date">
               {todo.createdAt.toLocaleDateString()}
             </div>

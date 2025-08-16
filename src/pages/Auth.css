@@ -1,0 +1,80 @@
+.auth-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.auth-card {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+  text-align: center;
+  color: var(--ion-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-icon {
+  font-size: 1.5em;
+}
+
+.auth-segment {
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-item {
+  --background: var(--ion-color-light);
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin-bottom: 8px;
+}
+
+.auth-item ion-icon {
+  color: var(--ion-color-primary);
+  margin-right: 8px;
+}
+
+.auth-submit-btn {
+  margin-top: 20px;
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 600;
+}
+
+.demo-credentials {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.demo-credentials h6 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.demo-credentials p {
+  margin: 4px 0;
+  font-size: 0.9em;
+}

@@ -20,18 +20,132 @@
   font-size: 20px;
 }
 
+/* Header Button Styles */
+.header-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.header-test-btn {
+  --color: #28a745 !important;
+  --background: rgba(40, 167, 69, 0.1) !important;
+  --border-color: #28a745 !important;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 8px !important;
+}
+
+.header-test-btn:hover {
+  --background: #28a745 !important;
+  --color: white !important;
+}
+
+.header-import-btn {
+  --color: #007bff !important;
+  --background: rgba(0, 123, 255, 0.1) !important;
+  --border-color: #007bff !important;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 8px !important;
+}
+
+.header-import-btn:hover {
+  --background: #007bff !important;
+  --color: white !important;
+}
+
+.header-sync-btn {
+  --color: #6f42c1 !important;
+  --background: rgba(111, 66, 193, 0.1) !important;
+  --border-color: #6f42c1 !important;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 8px !important;
+}
+
+.header-sync-btn:hover {
+  --background: #6f42c1 !important;
+  --color: white !important;
+}
+
+.header-delete-btn {
+  --color: #dc3545 !important;
+  --background: rgba(220, 53, 69, 0.1) !important;
+  --border-color: #dc3545 !important;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 8px !important;
+}
+
+.header-delete-btn:hover {
+  --background: #dc3545 !important;
+  --color: white !important;
+}
+
+/* Disabled states */
+.header-buttons ion-button[disabled] {
+  --color: #6c757d !important;
+  --background: rgba(108, 117, 125, 0.1) !important;
+  --border-color: #dee2e6 !important;
+  opacity: 0.6;
+}
+
+.header-buttons ion-button[disabled]:hover {
+  --color: #6c757d !important;
+  --background: rgba(108, 117, 125, 0.1) !important;
+}
+
 .todo-stats {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .todo-stats ion-badge {
   font-size: 12px;
   padding: 8px 12px;
   border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+}
+
+/* Specific badge colors for better contrast */
+.stats-pending {
+  --background: #ffc107 !important;
+  --color: #000 !important;
+  border-color: #e0a800 !important;
+}
+
+.stats-completed {
+  --background: #28a745 !important;
+  --color: white !important;
+  border-color: #1e7e34 !important;
+}
+
+.stats-total {
+  --background: #6c757d !important;
+  --color: white !important;
+  border-color: #495057 !important;
+}
+
+.stats-sync {
+  --background: #17a2b8 !important;
+  --color: white !important;
+  border-color: #117a8b !important;
+}
+
+.sync-status {
+  font-size: 10px;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 4px;
 }
 
 .filter-segment {
@@ -39,15 +153,26 @@
   --background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
 }
 
 .filter-segment ion-segment-button {
   --color: #6c757d;
-  --color-checked: #007bff;
+  --color-checked: #ffffff;
   --indicator-color: #007bff;
+  --indicator-color-checked: #007bff;
+  --background-checked: #007bff;
   font-weight: 500;
   text-transform: none;
   font-size: 14px;
+  margin: 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.filter-segment ion-segment-button:hover {
+  --color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
 }
 
 .todo-list-container {
@@ -121,6 +246,34 @@
 
 .todo-item {
   animation: slideIn 0.3s ease-out;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.empty-icon {
+  font-size: 64px;
+  color: #dee2e6;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.empty-state ion-text {
+  font-size: 16px;
+  display: block;
+  margin-top: 8px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 /* Custom scrollbar */

@@ -106,4 +106,63 @@
   --padding-start: 12px;
   --padding-end: 12px;
   font-size: 14px;
+}
+
+.todo-media {
+  margin: 12px 0;
+  padding: 8px 0;
+}
+
+.todo-image {
+  max-height: 200px;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.todo-location {
+  margin: 8px 0;
+}
+
+.todo-media ion-badge,
+.todo-location ion-badge {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.todo-media ion-badge {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.todo-location ion-badge {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+  color: white;
+}
+
+.todo-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.attachment-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(0, 123, 255, 0.1);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 12px;
+  font-size: 10px;
+  color: #007bff;
 } 

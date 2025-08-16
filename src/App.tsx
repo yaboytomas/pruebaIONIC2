@@ -1,7 +1,9 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSpinner, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Home from './pages/Home';
+import AuthPage from './pages/Auth';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,18 +37,60 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
+const AppRoutes: React.FC = () => {
+  const { isAuthenticated, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh' 
+      }}>
+        <IonSpinner name="dots" />
+      </div>
+    );
+  }
+
+  return (
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
+        {isAuthenticated ? (
+          <>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/auth">
+              <Redirect to="/home" />
+            </Route>
+          </>
+        ) : (
+          <>
+            <Route exact path="/auth">
+              <AuthPage />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/auth" />
+            </Route>
+            <Route path="/home">
+              <Redirect to="/auth" />
+            </Route>
+          </>
+        )}
       </IonRouterOutlet>
     </IonReactRouter>
+  );
+};
+
+const App: React.FC = () => (
+  <IonApp>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   </IonApp>
 );
 

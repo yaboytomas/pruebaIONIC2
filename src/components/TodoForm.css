@@ -26,6 +26,115 @@
   gap: 16px;
 }
 
+.media-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.media-controls ion-button {
+  flex: 1;
+  min-width: 120px;
+  --border-radius: 6px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Camera Button Styling */
+.camera-btn {
+  --background: #28a745 !important;
+  --background-activated: #1e7e34 !important;
+  --background-focused: #1e7e34 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border: 1px solid #1e7e34 !important;
+}
+
+/* Location Button Styling */
+.location-btn {
+  --background: #17a2b8 !important;
+  --background-activated: #117a8b !important;
+  --background-focused: #117a8b !important;
+  --background-hover: #138496 !important;
+  --color: white !important;
+  --border: 1px solid #117a8b !important;
+}
+
+/* Submit Button Styling */
+.submit-button {
+  --background: #ffc107 !important;
+  --background-activated: #e0a800 !important;
+  --background-focused: #e0a800 !important;
+  --background-hover: #e0a800 !important;
+  --color: #000 !important;
+  --border: 1px solid #d39e00 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-top: 8px !important;
+}
+
+/* Disabled state for form buttons */
+.media-controls ion-button[disabled] {
+  --background: rgba(255, 255, 255, 0.3) !important;
+  --color: rgba(255, 255, 255, 0.6) !important;
+  --border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.submit-button[disabled] {
+  --background: rgba(255, 255, 255, 0.3) !important;
+  --color: rgba(255, 255, 255, 0.6) !important;
+  --border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Remove buttons in preview */
+.remove-btn {
+  --background: #dc3545 !important;
+  --background-activated: #c82333 !important;
+  --background-focused: #c82333 !important;
+  --background-hover: #c82333 !important;
+  --color: white !important;
+  --border: 1px solid #bd2130 !important;
+  --border-radius: 50% !important;
+  --padding-start: 8px !important;
+  --padding-end: 8px !important;
+}
+
+.media-preview {
+  margin: 12px 0;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.media-preview ion-item {
+  --background: transparent;
+  --border-color: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.media-preview ion-label {
+  color: white;
+}
+
+.media-preview ion-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.media-preview ion-img {
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .form-input,
 .form-textarea {
   --padding-start: 16px;
@@ -49,6 +158,9 @@
 
 .form-buttons {
   margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-button {
